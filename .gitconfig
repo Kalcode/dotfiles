@@ -1,0 +1,19 @@
+[user]
+	name = David Clausen
+	email = david@poetic.io
+[difftool]
+	prompt = false
+[diff]
+	#tool = diffmerge
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool]
+	keepBackup = false
+
+[merge]
+	tool = diffmerge
+[core]
+	editor = nvim
+	excludesfile = /Users/poet/.gitignore_global
