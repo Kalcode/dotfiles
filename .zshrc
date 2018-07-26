@@ -7,6 +7,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH=${JAVA_HOME}/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -97,19 +100,27 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi='nvim'
 alias vim='nvim'
+
+# alias python='python3'
+
 alias g='hub'
-alias gplog='
-git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-DEFAULT_USER=poet
+alias gplog='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias glog=gplog
+
+DEFAULT_USER=poet
+
 alias bfg='java -jar ~/Tools/bfg.jar'
+
+alias weather='MYCITY="$(curl ifconfig.co/city)" && curl wttr.in/$MYCITY'
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+alias config='/usr/bin/git --git-dir=/Users/poet/.cfg/ --work-tree=/Users/poet'
+export PATH="/usr/local/opt/sqlite/bin:$PATH"

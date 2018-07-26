@@ -9,3 +9,4 @@ node_modules
 .rvmrc
 .ruby-gemset
 .ruby-version
+.nvmrc
